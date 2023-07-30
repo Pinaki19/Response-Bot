@@ -1,0 +1,35 @@
+The setup consists of Two simple steps:
+
+1.
+    Go to
+    https://googlechromelabs.github.io/chrome-for-testing/
+    
+    To Download chromedriver according to your OS.
+    Or click the following link according to you OS.
+    
+    1.Windows: https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/win64/chromedriver-win64.zip
+    2.Linux: https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/linux64/chromedriver-linux64.zip
+    3.mac-arm64 : https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/mac-arm64/chromedriver-mac-arm64.zip
+    4.mac-x64: https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/mac-x64/chromedriver-mac-x64.zip
+    
+    This would download a .zip file. Extract that file and you will find a chromedriver.exe (for windows) file.
+    Copy the path to this file and update this value in 'PATH' variable in Respond.py file(You will find it at the bottom section).
+
+
+2.
+    go to command prompt or terminal or power shell and run
+    pip install selenium
+    or
+    pip3 install selenium
+    or
+    python -m pip install selenium
+
+Now you are good to go.
+you can test whether your program works with this form link:
+https://docs.google.com/forms/d/e/1FAIpQLSeAEmRNZ2ebHGn07btth6BWIGWmocia5tbazPLot8UAjU75sg/viewform
+
+
+Thanks for reading.
+    
+
+
