@@ -7,6 +7,7 @@ from selenium.webdriver.common.alert import Alert
 import time
 from random import randint,choice
 
+# Go to the bottom to update the PATH variable
 
 def show_menu():
     print('----------------------------------------------------------------------------------')
