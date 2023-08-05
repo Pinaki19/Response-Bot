@@ -6,7 +6,7 @@ This project has certain dependencies:
   The form should not have any other text field except a Email and a Name Field.(Not having any or both is OK!!).
   The email field should be of type="email" and not a text question, else response will be "Others".
   If the form has more text fields. all of them will be filled with the text "Others".
-  The form should not contain any other type of question except of type 1. Multiple choice or 2. Check-box type.
+  The form should not contain any other type of question except of type 1. Multiple choice or 2. Check-box type 3.Rate someting in Linear scale
   Filling of other types of questions are currently not supported.
   You can ask it to fill any number of responses but if the form requires a name field then you must provide that many names
   You can ask chatgpt to provide you the names, in the required format.
