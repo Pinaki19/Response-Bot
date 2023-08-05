@@ -53,15 +53,17 @@ def main(PATH):
     
     service = Service(executable_path=PATH)
     options = webdriver.ChromeOptions()
-    options.add_argument("window-size=1200x600")
+    options.add_argument("window-size=200x200")
     driver = webdriver.Chrome(service=service, options=options)
     # ...
     i = 0
-    while(N):
+    while(N>0):
+        print(f"Submitting form no: {i+1}")
         driver.get(form)
-        driver.implicitly_wait(0.25)
+        #driver.minimize_window()
+        driver.implicitly_wait(0.5)
         # identify text box
-        time.sleep(1)
+        time.sleep(.75)
         flag1,flag2=0,0
         try:
             l = driver.find_elements(By.XPATH, '*//input[@type="text"]')
@@ -84,6 +86,7 @@ def main(PATH):
             Mail_name=''.join([i.strip() for i in NAME.split()])
             EMAIL=Mail_name+str(randint(10,1000))+'@'+choice(['gmail','yahoo','outlook'])+'.com'
         i+=1
+        print(f"Data used for this form Name:{NAME} Email:{EMAIL}")
         if Res==4:
             c=1
         else:
@@ -93,31 +96,47 @@ def main(PATH):
                 if (c == 0 and i < len(NAMES)):
                     X.send_keys(NAME)
                     X.send_keys(Keys.RETURN)
-                    c+=1
+                    c += 1
                 else:
                     X.send_keys("others")
                     X.send_keys(Keys.RETURN)
-                    c += 1             
+                    c += 1
+                
         if flag2:
             for X in L2:
                 X.send_keys(EMAIL)
                 # send keyboard input
                 X.send_keys(Keys.RETURN)
+        Rate = driver.find_elements(By.XPATH, '*//div[@role="radiogroup"]')
+        if len(Rate)>0:
+            for element in Rate:
+                try:
+                    children = element.find_elements(By.XPATH,"./child::*")
+                    if len(children)==0:
+                        continue
+                    children = children[0].find_elements(By.XPATH, "./child::*")
+                    if len(children)<2:
+                        continue
+                    children = children[1].find_elements(By.XPATH, "./child::*")
+                    random_selected_child=randint(2,len(children)-2)
+                    children[random_selected_child].click()
+                except:
+                    pass
                 
         with open(r'./Main.js', 'r') as f:
             ext_js = f.read()
         driver.execute_script(ext_js)
         #// Before you try to switch to the so given alert, it needs to be present.
         try:
-            time.sleep(0.75)
+            time.sleep(.50)
             alert = Alert(driver)
             alert.accept()
         except:
             pass
-    
         N-=1
         if(N==0):
             time.sleep(2)
+            driver.quit()
             
 if __name__=='__main__':
     # please change this to correct chromedriver path

@@ -22,9 +22,12 @@ function main() {
     for (k = 0; k < p.length; k++) {
         x = p[k].children[0];
         //console.log(x.children[0]);
+    
         try {
             x = x.children[0].children[1];
-            console.log(x.children[1].getAttribute("role"))
+            //console.log(x.children[1].getAttribute("role"));
+            //console.log(x);
+            
             if (x.children[1].getAttribute("role") == "list") {
                 filled.add(k);
                 x = x.children[1];
@@ -59,6 +62,7 @@ function main() {
         catch (e) {
             not_ques.add(k);
             //console.log("Not ques"+k+e);
+            console.log("not ques"+p[k])
         }
 
 
