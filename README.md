@@ -1,5 +1,7 @@
 # Response-Bot
 
+THE WEBSITE IS LIVE. USE THAT INSTEAD!
+
 This project aims to automate the response filling in google forms.
 
 First Read the Dependencies.txt then check out the Setup.txt file If you want to continue.
